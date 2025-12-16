@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-test-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Клонування репозиторію
+        uses: actions/checkout@v3
+
+      - name: Налаштування Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Встановлення залежностей
+        run: npm ci
+
+      - name: Перевірка форматування коду
+        run: npm run format:check
+
+      - name: Перевірка ESLint
+        run: npm run lint
+
+      - name: Перевірка збірки проєкту
+        run: npm run build
+
+      - name: Запуск тестів
+        run: npm test
