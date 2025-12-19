@@ -27,5 +27,5 @@ TaskMate - це веб-застосунок для управління навч
 
 - Backend: Node.js / Express (або інший фреймворк на вибір)
 - Frontend: React / Next.js
-- База даних: PostgreSQL / MongoDB
+- База даних: PostgreSQL
 - Інструменти CI/CD: GitHub Actions
