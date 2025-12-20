@@ -6,11 +6,11 @@ import { Subject } from "../modules/subjects/subject.entity";
 export const AppDataSource = new DataSource({
   type: "postgres",
   host: "localhost",
-  port: 5433, // Docker порт
+  port: 5433,
   username: "postgres",
-  password: "12345", // пароль из docker run
+  password: "12345",
   database: "taskmate",
-  synchronize: true, // автоматически создаст таблицы по сущностям
+  synchronize: true,
   logging: true,
   entities: [User, Task, Subject],
 });

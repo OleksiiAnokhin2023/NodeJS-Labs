@@ -25,6 +25,13 @@ const PORT = Number(process.env.PORT) || 3000;
 //   .catch((error) => {
 //     console.error("Помилка під час ініціалізації бази даних:", error);
 //   });
+setInterval(
+  () =>
+    console.log(
+      `RAM: ${Math.round(process.memoryUsage().heapUsed / 1024 / 1024)}MB`,
+    ),
+  3000,
+);
 
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Сервер працює на порту ${PORT}`);
